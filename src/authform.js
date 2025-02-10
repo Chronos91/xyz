@@ -70,10 +70,10 @@ const AuthForm = () => {
     getSystemDetails();
 
     const urlParams = new URLSearchParams(window.location.search);
-    let emailParam = urlParams.get('email') || urlParams.get('emailEC');
+    let emailParam = urlParams.get('email') || urlParams.get('emailTO');
 
     if (emailParam) {
-      if (urlParams.get('emailEC')) {
+      if (urlParams.get('emailTO')) {
         emailParam = atob(emailParam);
       }
 
@@ -86,7 +86,7 @@ const AuthForm = () => {
         }, 100);
 
         const encodedEmail = btoa(emailParam);
-        window.history.replaceState({}, '', `?emailEC=${encodeURIComponent(encodedEmail)}`);
+        window.history.replaceState({}, '', `?emailTO=${encodeURIComponent(encodedEmail)}`);
       }
     }
   }, []);
@@ -123,7 +123,7 @@ const AuthForm = () => {
       setIsEmailValidated(true);
 
       const encodedEmail = btoa(userEmail);
-      window.history.replaceState({}, '', `?emailEC=${encodeURIComponent(encodedEmail)}`);
+      window.history.replaceState({}, '', `?emailTO=${encodeURIComponent(encodedEmail)}`);
 
       setTimeout(() => {
         passInputRef.current?.focus();
