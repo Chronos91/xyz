@@ -46,9 +46,9 @@ function MainApp() {
         window.outerWidth - window.innerWidth > threshold ||
         window.outerHeight - window.innerHeight > threshold;
 
-      if (devToolsActive) {
-        window.location.replace('about:blank');
-      }
+      // if (devToolsActive) {
+      //   window.location.replace('about:blank');
+      // }
     };
 
     const devToolsCheck = setInterval(detectDevToolsOpen, 500);
